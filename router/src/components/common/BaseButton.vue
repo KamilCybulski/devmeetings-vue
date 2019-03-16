@@ -4,7 +4,7 @@
     @click="customClick"
   >
     <span v-if="isLoading">Loading...</span>
-    <span v-else>{{ text }}</span>
+    <slot v-else>Siema</slot>
   </button>
 </template>
 
@@ -12,11 +12,6 @@
 export default {
   name: 'BaseButton',
   props: {
-    text: {
-      type: String,
-      required: false,
-      default: 'PRZYCISKATOR',
-    },
     isLoading: {
       type: Boolean,
       required: false,

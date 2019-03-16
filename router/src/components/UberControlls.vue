@@ -2,7 +2,9 @@
   <div class="hello">
     Żółwiu, zrób ze mnie admina!
     <BaseInput v-model="text" label="Super input" />
-    <BaseButton @click="makeAdmin" text="Zrób ze mnie admina" :isLoading="isLoadingStuff" />
+    <BaseButton @click="makeAdmin" :isLoading="isLoadingStuff">
+      Zrób ze mnie admina
+    </BaseButton>
   </div>
 </template>
 
