@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     Żółwiu, zrób ze mnie admina!
-    <BaseInput v-model="text" />
+    <BaseInput v-model="text" label="Super input" />
     <BaseButton @click="makeAdmin" text="Zrób ze mnie admina" />
   </div>
 </template>
@@ -17,7 +17,7 @@ export default {
     BaseInput,
   },
   data: () => ({
-    text: '',
+    text: 'buzia',
   }),
   methods: {
     makeAdmin() {
