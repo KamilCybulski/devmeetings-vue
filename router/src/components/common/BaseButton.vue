@@ -24,12 +24,12 @@ export default {
     },
   },
   computed: {
-    isDisabled() { return this.isLoading || this.$attrs.disabled },
+    isDisabled() { return this.isLoading || this.$attrs.disabled; },
   },
   methods: {
     customClick(event) {
       this.$emit('click', event.target.value);
     },
   },
-}
+};
 </script>
