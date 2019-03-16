@@ -6,6 +6,7 @@ import Score from './views/Score.vue';
 import Settings from './views/Settings.vue';
 import Vote from './views/Vote.vue';
 import UberSettings from './views/UberSettings.vue';
+import isAdmin from './guards/is_admin';
 
 Vue.use(Router);
 
@@ -33,6 +34,7 @@ export default new Router({
       path: '/settings',
       name: 'settings',
       component: Settings,
+      beforeEnter: isAdmin,
     },
     {
       path: '/vote',

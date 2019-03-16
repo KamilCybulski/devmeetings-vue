@@ -2,13 +2,15 @@
   <div class="hello">
     Żółwiu, zrób ze mnie admina!
     <BaseInput v-model="text" label="Super input" />
-    <BaseButton @click="makeAdmin" :isLoading="isLoadingStuff">
+    <BaseButton @click="setAdmin" :isLoading="isLoadingStuff">
       Zrób ze mnie admina
     </BaseButton>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 import { BaseButton, BaseInput } from '@/components/common';
 
 export default {
@@ -22,14 +24,7 @@ export default {
     isLoadingStuff: false,
   }),
   methods: {
-    makeAdmin() {
-      console.log(this.text);
-      this.isLoadingStuff = true;
-      setTimeout(() => {
-        localStorage.setItem('admin', 'true');
-        this.isLoadingStuff = false;
-      }, 1000);
-    },
+    ...mapActions('user', [ 'setAdmin' ]),
   },
 };
 </script>
