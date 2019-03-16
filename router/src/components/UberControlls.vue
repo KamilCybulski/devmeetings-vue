@@ -7,8 +7,7 @@
 </template>
 
 <script>
-import BaseButton from './common/BaseButton.vue';
-import BaseInput from './common/BaseInput.vue';
+import { BaseButton, BaseInput } from '@/components/common';
 
 export default {
   name: 'UberControlls',
