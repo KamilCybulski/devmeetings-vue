@@ -2,7 +2,7 @@
   <div class="hello">
     Żółwiu, zrób ze mnie admina!
     <BaseInput v-model="text" label="Super input" />
-    <BaseButton @click="makeAdmin" text="Zrób ze mnie admina" />
+    <BaseButton @click="makeAdmin" text="Zrób ze mnie admina" :isLoading="isLoadingStuff" />
   </div>
 </template>
 
@@ -18,11 +18,16 @@ export default {
   },
   data: () => ({
     text: 'buzia',
+    isLoadingStuff: false,
   }),
   methods: {
     makeAdmin() {
       console.log(this.text);
-      localStorage.setItem('admin', 'true');
+      this.isLoadingStuff = true;
+      setTimeout(() => {
+        localStorage.setItem('admin', 'true');
+        this.isLoadingStuff = false;
+      }, 1000);
     },
   },
 };
